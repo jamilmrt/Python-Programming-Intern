@@ -37,7 +37,7 @@ Expense Tracker
 5. Exit 
 ```
 
-You can select an option by entering the corresponding number.
+- You can select an option by entering the corresponding number.
 
 # Data Storage
 - The application stores expenses in a CSV file named expenses.csv. Each entry includes the date, description, amount, and category of the expense.
