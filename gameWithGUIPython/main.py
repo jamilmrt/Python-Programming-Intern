@@ -7,10 +7,17 @@ import sys
 pygame.init()
 
 # Initial set up
+<<<<<<< HEAD
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 500
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('2048')
+=======
+WIDTH = 400
+HEIGHT = 500
+screen = pygame.display.set_mode(400, 500)
+pygame.displayset_caption('2048')
+>>>>>>> origin/main
 timer = pygame.time.Clock()
 fps = 60
 font = pygame.font.Font('freesansbold.ttf', 24)
@@ -35,6 +42,7 @@ colors = {0: (204, 192, 179),
           }
 
 # game variable initialize
+<<<<<<< HEAD
 board_values = [[2 for _ in range(4)] for _ in range(4)]
 
 ## Draw background for the board
@@ -44,10 +52,21 @@ def draw_board():
     pygame.draw.rect(screen, colors['bg'], [0, 0, 400, 400], 0, 10)
 
 def draw_pieces(board):
+=======
+board_values = [[0 for _ in range(4)] for _ in range(4) ]
+
+## Draw background for the board
+def draw_board():
+    pygame.draw.rect(screen, colors['bg'], (200, 200,), int[0, 0, 400, 400], 0, 10)
+
+
+def draw_pieces(board_values, board=None):
+>>>>>>> origin/main
     for i in range(4):
         for j in range(4):
             value = board[i][j]
             if value > 8:
+<<<<<<< HEAD
                 value_color = colors['light text']
             else:
                 value_colors = colors['dark text']
@@ -63,13 +82,27 @@ def draw_pieces(board):
                 text_rect = value_text.get_rect(center=(j * 95 + 57, i * 95, 57))
                 screen.blit(value_text, text_rect)
                 pygame.draw.rect(screen, color, [j * 95 + 20, i * 95 + 20, 75, 75], 0, 5)
+=======
+                value_colors = colors['light text']
+            else:
+                value_colors = colors['dark text']
+            if value <= 2048:
+                clor = colors[value]
+            else:
+                color = colors['other']
+            pygame.draw.rect(screen, color, [j * 95 + 20, i * 95 + 20, 75, 75], 0, 5)
+>>>>>>> origin/main
 
 
 # main game Loop
 run = True
 while run:
     timer.tick(fps)
+<<<<<<< HEAD
     screen.fill((169, 169, 169))
+=======
+    screen.fill('gray')
+>>>>>>> origin/main
     draw_board()
     draw_pieces(board_values)
 
