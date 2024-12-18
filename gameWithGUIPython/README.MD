@@ -55,6 +55,10 @@ This is an implementation of the popular 2048 game using the Python **Pygame** l
    ```bash
    python main.py
    ```
+---
+# Game Gui
+![alt text](example.png)
+![alt text](som.png)
 
 ---
 
