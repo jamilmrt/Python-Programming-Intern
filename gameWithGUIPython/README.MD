@@ -113,7 +113,7 @@ This is an implementation of the popular 2048 game using the Python **Pygame** l
 
 ## Acknowledgments
 
-- Inspired by the original **2048 Game** created by Jamil Aktar
+- Inspired by the original **2048 Game** created by **Jamil Aktar**
 - Built using the **Pygame** library.
 
 ---
