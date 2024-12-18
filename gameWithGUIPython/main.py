@@ -3,6 +3,7 @@ import random
 import csv
 import json
 import os
+
 # from pygame.locals import *
 
 # Initialize Pygame
@@ -39,7 +40,7 @@ clock = pygame.time.Clock()
 
 
 class Game2048:
-    def __init__(self, player_name, difficulty = "easy"):
+    def __init__(self, player_name, difficulty="easy"):
         self.player_name = player_name
         self.score = 0
         self.history = []  # List to store game states
@@ -179,129 +180,14 @@ class Game2048:
         # print(f"Score saved for {self.player_name}: {self.score}")
 
     def display_leaderboard(self):
-            try:
-                with open('leaderboard.json', 'r') as f:
-                    scores = json.load(f)
-                    # Process the scores data here, e.g., print or display in a GUI
-            except json.JSONDecodeError as e:
-                print(f"Error decoding leaderboard data: {e}")
-                # Handle the error, e.g., log the error, display a user-friendly message, or attempt to recover from
-                # the error
-
-
-# if __name__ == "__main__":
-
-
-#     pygame.font.init()
-
-#     # Create a GUI input window for name and difficulty
-#     font = pygame.font.SysFont(None, 48)
-#     input_box = pygame.Rect(50, 200, 300, 50)
-#     color_inactive = pygame.Color('lightskyblue3')
-#     color_active = pygame.Color('dodgerblue2')
-#     color = color_inactive
-#     active = False
-#     text = ''
-#     difficulty = 'easy'
-
-#     while True:
-#         screen.fill((255, 255, 255))
-#         txt_surface = font.render("Enter your name:", True, (0, 255, 255))
-#         game = Game2048(txt_surface)
-#         screen.blit(txt_surface, (50, 150))
-#         dif_surface = font.render(f"Difficulty: {difficulty} (E/M/H)", True, (0, 0, 0))
-#         screen.blit(dif_surface, (50, 270))
-
-
-#         pygame.draw.rect(screen, color, input_box, 2)
-#         name_surface = font.render(text, True, (0, 0, 0))
-#         screen.blit(name_surface, (input_box.x + 5, input_box.y + 5))
-
-#         pygame.display.flip()
-
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#                 exit()
-#             if event.type == pygame.MOUSEBUTTONDOWN:
-#                 if input_box.collidepoint(event.pos):
-#                     active = not active
-#                 else:
-#                     active = False
-#                 color = color_active if active else color_inactive
-#             if event.type == pygame.KEYDOWN:
-#                 if active:
-#                     if event.key == pygame.K_RETURN:
-#                         if text: #check if name isn't empty
-#                             game = Game2048(text, difficulty)
-#                             name_entered = True
-#                             break #exit the name input loop
-#                     elif event.key == pygame.K_BACKSPACE:
-#                         text = text[:-1]
-#                     else:
-#                         text += event.unicode
-#             if event.type == pygame.KEYDOWN and not name_entered: #difficulty selection
-#                 if event.key == pygame.K_e:
-#                     difficulty = "easy"
-#                 elif event.key == pygame.K_m:
-#                     difficulty = "medium"
-#                 elif event.key == pygame.K_h:
-#                     difficulty = "hard"
-#         # Handle game inputs and logic
-#         keys = pygame.key.get_pressed()
-#         if keys[pygame.K_LEFT]:
-#             game.move_tiles('left')
-#         elif keys[pygame.K_RIGHT]:
-#             game.move_tiles('right')
-#         elif keys[pygame.K_UP]:
-#             game.move_tiles('up')
-#         elif keys[pygame.K_DOWN]:
-#             game.move_tiles('down')
-#         elif keys[pygame.K_u]:  # Undo move
-#             game.undo_move()
-
-#         # Check for game over
-#         is_over, message = game.is_game_over()
-#         if is_over:
-#             font = pygame.font.SysFont(None, 72)
-#             game_over_surface = font.render(message, True, (255, 0, 0))
-#             screen.blit(game_over_surface, (50, HEIGHT // 2))
-#             pygame.display.flip()   
-#             pygame.time.delay(3000)
-#             game.save_score()
-#             pygame.quit()
-#             exit()
-
-#         # Render the board
-#         screen.fill((255, 255, 255))
-#         for row in range(GRID_SIZE):
-#             for col in range(GRID_SIZE):
-#                 tile_value = game.board[row][col]
-#                 tile_color = TILE_COLORS[tile_value]
-#                 pygame.draw.rect(
-#                     screen,
-#                     tile_color,
-#                     (col * CELL_SIZE + 10, row * CELL_SIZE + 10, CELL_SIZE - 20, CELL_SIZE - 20),
-#                     border_radius=5
-#                 )
-#                 if tile_value != 0:
-#                     text_surface = font.render(str(tile_value), True, (0, 0, 0))
-#                     text_rect = text_surface.get_rect(center=(col * CELL_SIZE + 60, row * CELL_SIZE + 60))
-#                     screen.blit(text_surface, text_rect)
-
-#         # Display player info
-#         info_font = pygame.font.SysFont(None, 36)
-#         score_surface = info_font.render(f"Score: {game.score}", True, (0, 0, 0))
-#         screen.blit(score_surface, (10, HEIGHT - 80))
-#         player_surface = info_font.render(f"Player: {game.player_name}", True, (0, 0, 0))
-#         screen.blit(player_surface, (10, HEIGHT - 50))
-
-#         # Display leaderboard
-#         game.display_leaderboard()
-
-#         # Refresh the display
-#         pygame.display.flip()
-#         clock.tick(30)
+        try:
+            with open('leaderboard.json', 'r') as f:
+                scores = json.load(f)
+                # Process the scores data here, e.g., print or display in a GUI
+        except json.JSONDecodeError as e:
+            print(f"Error decoding leaderboard data: {e}")
+            # Handle the error, e.g., log the error, display a user-friendly message, or attempt to recover from
+            # the error
 
 
 if __name__ == "__main__":
