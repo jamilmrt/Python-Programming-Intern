@@ -83,11 +83,12 @@ This is an implementation of the popular 2048 game using the Python **Pygame** l
 
 ## File Structure
 
+---
 ```
 .
 ├── main.py          # Main script to run the game
-├── assets/          # Folder for assets (fonts, images, etc.)
 ├── leaderboard.txt  # Stores leaderboard scores
+├── main.text.py     # This is a testing file where i have done my code 
 └── README.md        # This file
 ```
 
@@ -109,25 +110,10 @@ This is an implementation of the popular 2048 game using the Python **Pygame** l
 
 ---
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-1. Fork this repository.
-2. Create a new branch for your feature/bugfix.
-3. Commit your changes and push to your branch.
-4. Submit a pull request with a detailed description of your changes.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 ## Acknowledgments
 
-- Inspired by the original **2048 Game** created by Gabriele Cirulli.
+- Inspired by the original **2048 Game** created by Jamil Aktar
 - Built using the **Pygame** library.
 
 ---
