@@ -43,7 +43,7 @@ This is an implementation of the popular 2048 game using the Python **Pygame** l
 1. Clone the repository:
    ```bash
    git clone https://github.com/jamilmrt/Python-Programming-Intern/tree/main/gameWithGUIPython
-   cd pygame-2048
+   cd gameWithGUIPython
    ```
 
 2. Install the required dependencies:
