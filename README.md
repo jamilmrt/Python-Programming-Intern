@@ -56,9 +56,9 @@ To apply for the internship, please submit the following:
 
 For any questions or further information, please contact:
 
-- **Name:** [Your Name]
-- **Email:** [Your Email]
-- **Phone:** [Your Phone Number]
+- **Name:** JAMIL AKTAR
+- **Email:** Jamilaktar227@gmail.com
+- **Phone:** [---]
 
 ## Conclusion
 
