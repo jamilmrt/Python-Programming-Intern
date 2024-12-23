@@ -175,19 +175,22 @@ class Game2048:
             if not file_exists:  # +
                 writer.writeheader()  # +
 
-            writer.writerow({'name': self.player_name, 'score': self.score, 'difficulty': self.difficulty})
+            writer.writerow({'name': self.player_name, 'score': self.score, 'difficulty': self.difficulty, })
 
         # print(f"Score saved for {self.player_name}: {self.score}")
 
     def display_leaderboard(self):
         try:
-            with open('leaderboard.json', 'r') as f:
+            with open('leaderboard.csv', 'r') as f:
                 scores = json.load(f)
                 # Process the scores data here, e.g., print or display in a GUI
+
+                # writer.writerow({'High Score : ': scores})
         except json.JSONDecodeError as e:
-            print(f"Error decoding leaderboard data: {e}")
+            # print(f"Error decoding leaderboard data: {e}")
             # Handle the error, e.g., log the error, display a user-friendly message, or attempt to recover from
             # the error
+            pass
 
 
 if __name__ == "__main__":
@@ -211,6 +214,7 @@ if __name__ == "__main__":
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
+
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if input_box.collidepoint(event.pos):
                     active = not active
@@ -239,7 +243,7 @@ if __name__ == "__main__":
             break
 
         screen.fill((255, 255, 255))
-        txt_surface = font.render("Enter your name:", True, (0, 0, 0))
+        txt_surface = font.render("Enter your name: ", True, (0, 0, 0))
         screen.blit(txt_surface, (50, 150))
         dif_surface = font.render(f"Difficulty: {difficulty}", True, (0, 0, 0))
         screen.blit(dif_surface, (50, 270))

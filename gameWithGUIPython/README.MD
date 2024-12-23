@@ -48,7 +48,7 @@ This is an implementation of the popular 2048 game using the Python **Pygame** l
 
 2. Install the required dependencies:
    ```bash
-   pip install pygame
+   pip install -r requirements.txt
    ```
 
 3. Run the game:
